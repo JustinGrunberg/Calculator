@@ -4,82 +4,109 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: inherit;
 }
 
-main {
-    padding: 2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+body {
+    font-family: 'Inter', sans-serif;
 }
 
 .calculator {
-    border: 1px solid black;
-    border-radius: 30px;
-    padding: 1rem;
+  max-width: 430px;
+  width: 100%;
+  padding: 10px;
+  margin: 0 auto;
+  border-radius: 10px;
+  background-color: black;
+}
+
+.display-wrapper {
+    height: 155px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+p{
+    color: white;
+    font-size: 5rem;
+}
+
+.button {
+    width: 95px;
+    height: 95px;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: background-color 0.2 ease;
+}
+
+.big-btn {
+    width: 200px;
+    height: 95px;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 2rem;
+    text-align: left;
+    padding-left: 40px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.button-wrapper {
+    display: flex;
+}
+
+.input-wrapper {
     display: flex;
     flex-direction: column;
-    width: 310px;
-    align-items: center;
     gap: 10px;
-    background-color: black;
-    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3)
+
 }
 
-.display {
-    width: 100%;          
-    height: 50px;    
-    background: black; 
-    text-align: right;
-    font-size: 1.5rem;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    color: white;
-  }
-
-.button-group {
+.utility-wrapper {
     display: flex;
-    flex-wrap: wrap;
     gap: 10px;
 }
 
-.button  {
-    width: 60px;
-    height: 60px;
-    border: none;
-    border-radius: 50px;
-    color: white;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
+.number-wrapper {
+    display: flex;
+    gap:10px;
+    flex-wrap: wrap;
 }
 
-.number {
-    background-color: #707070;
+.operator-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
-.operator {
-    background-color: #FF6B2D;
+.number-wrapper > .button {
+    background-color: #505050;
 }
 
-.equals {
-    width: 130px;
-    height: 60px;
-    border: none;
-    border-radius: 50px;
-    background-color: #2563eb;
-    color: white;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
+.operator-wrapper > .button {
+    background-color: #FF9500;
 }
 
-.button-group > .number:hover {
-  background-color: #505050; 
+.utility-wrapper > .button {
+    background-color: #D4D4D2;
+    color: black
 }
 
-.button-group .operator:hover {
-    background-color: #e65c1f;
-  }
-
-.button-group > .equals:hover {
-    background-color: #1e40af; 
+.number-wrapper > .button:hover {
+    background-color: #686868;
 }
+
+.operator-wrapper > .button:hover {
+    background-color: #ffaa33;
+}
+
+.utility-wrapper > .button:hover {
+    background-color: #e4e4e2;
+}
+
+
