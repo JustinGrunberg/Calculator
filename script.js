@@ -2,10 +2,10 @@ let firstNumber = '0'
 let operator = null
 let secondNumber = '0'
 
-let display = document.querySelector('.display')
-let buttonGroup = document.querySelector('.button-group')
+let display = document.querySelector('p')
+let buttonWrapper = document.querySelector('.button-wrapper')
 
-buttonGroup.addEventListener('click', (e) => {
+buttonWrapper.addEventListener('click', (e) => {
     let buttonClicked = e.target
     let buttonTextContent = buttonClicked.textContent
     
@@ -16,7 +16,6 @@ buttonGroup.addEventListener('click', (e) => {
 
     if(buttonClicked.classList.contains('number')
         || buttonClicked.classList.contains('operator') 
-        || buttonClicked.classList.contains('comma')
     ){
         if(!operator){
             if(isNumber(buttonTextContent) || buttonTextContent === '.'){
