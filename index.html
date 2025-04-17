@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
     <script src="script.js" defer></script>
     <title>Calculator</title>
 </head>
@@ -11,30 +16,42 @@
 
     <main>
         <div class="calculator">
-            <div class="display">1</div>
+            <div class="display-wrapper">
+                <p>0</p>
+            </div>
 
-            <div class="button-group">
-            <button class="button number">7</button>
-            <button class="button number">8</button>
-            <button class="button number">9</button>
-            <button class="button operator">/</button>
+            <div class="button-wrapper">
+                <div class="input-wrapper">
+                    <div class="utility-wrapper">
+                        <button class="button delete">C</button>
+                        <button class="button undo"><i class="fa-solid fa-delete-left"></i></button>
+                        <button class="button plus-minus"><i class="fa-solid fa-plus-minus"></i></button>
+                    </div>
+                    <div class="number-wrapper">
+                        <button class="button number">7</button>
+                        <button class="button number">8</button>
+                        <button class="button number">9</button>
+                        
 
-            <button class="button number">4</button>
-            <button class="button number">5</button>
-            <button class="button number">6</button>
-            <button class="button operator">*</button>
+                        <button class="button number">4</button>
+                        <button class="button number">5</button>
+                        <button class="button number">6</button>
 
-            <button class="button number">1</button>
-            <button class="button number">2</button>
-            <button class="button number">3</button>
-            <button class="button operator">-</button>
+                        <button class="button number">1</button>
+                        <button class="button number">2</button>
+                        <button class="button number">3</button>
 
-            <button class="button number">0</button>
-            <button class="button operator">.</button>
-            <button class="button operator">C</button>
-            <button class="button operator">+</button>
-
-            <button class="button equals">=</button>
+                        <button class="button number big-btn">0</button>
+                        <button class="button number">.</button>
+                    </div>
+                </div>
+                <div class="operator-wrapper">
+                    <button class="button operator">/</button>
+                    <button class="button operator">*</button>
+                    <button class="button operator">-</button>
+                    <button class="button operator">+</button>
+                    <button class="button equals">=</button>
+                </div>
             </div>
         </div>
     </main>
