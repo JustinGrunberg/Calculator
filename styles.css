@@ -11,17 +11,34 @@ body {
     font-family: 'Inter', sans-serif;
 }
 
+main{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background: linear-gradient(145deg, #0B0F1A, #1B103A, #261D45);
+}
+
 .calculator {
   max-width: 430px;
   width: 100%;
   padding: 10px;
   margin: 0 auto;
+  border: 2px solid black;
   border-radius: 10px;
   background-color: black;
+  transition: border-color 0.5s ease, transform 0.5s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.calculator:hover {
+    border-color: #FF9500;
+    transform: scale(1.05);
 }
 
 .display-wrapper {
-    height: 155px;
+    height: 120px;
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
