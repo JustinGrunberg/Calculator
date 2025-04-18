@@ -1,29 +1,28 @@
 // Etch-A-Sketch stuff
 
-let main = document.querySelector('main')
+const main = document.querySelector('main')
 
-let mainWidth = main.getBoundingClientRect().width;
-let mainHeight = main.getBoundingClientRect().height;
-let cellsPerRow = 30;
+const mainWidth = main.offsetWidth;
+const mainHeight = main.offsetHeight
 
-const cellSize = mainWidth  / cellsPerRow; 
-const numberOfRows = Math.floor(mainHeight / cellSize);
+const CELLS_PER_ROW = 30
+const cellSize = mainWidth / CELLS_PER_ROW
+const rows = Math.ceil(mainHeight / cellSize)
 
-const gridSize = cellsPerRow * numberOfRows -1
+const cellAmount = CELLS_PER_ROW * rows
 
 function createGrid(gridSize, cellSize){
-    for(let i = 0;i <= gridSize; i++){
+    for(let i = 0; i <= gridSize; i++){
         let div = document.createElement('div')
+        div.className = 'grid-item'
         div.style.height = `${cellSize}px`
         div.style.width = `${cellSize}px`
-        div.style.border = '1px solid #1B103A'
-        div.style.background = '#1B103A'
         main.appendChild(div)
-
     }
 }
 
-createGrid(gridSize, cellSize)
+
+createGrid(cellAmount, cellSize)
 
 
 // Calculator stuff
