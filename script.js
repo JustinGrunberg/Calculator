@@ -6,17 +6,24 @@ let display = document.querySelector('p')
 let buttonWrapper = document.querySelector('.button-wrapper')
 
 buttonWrapper.addEventListener('click', (e) => {
-    let buttonClicked = e.target
-    let buttonTextContent = buttonClicked.textContent
-    
-    if(buttonClicked.classList.contains('delete')){
-        clearAll()
-        return
+    const buttonClicked = e.target.closest('button'); 
+    if (!buttonClicked) return;
+
+    const buttonTextContent = buttonClicked.textContent;
+
+    if (buttonClicked.classList.contains('delete')) {
+        clearAll();
+        return;
     }
 
-    if(buttonClicked.classList.contains('undo')){
-        undo()
-        return
+    if (buttonClicked.classList.contains('undo')) {
+        undo();
+        return;
+    }
+
+    if (buttonClicked.classList.contains('plus-minus')) {
+        togglePlusMinus();
+        return;
     }
 
     if(buttonClicked.classList.contains('number')
@@ -71,20 +78,42 @@ function undo(){
     if(firstNumber !== '0' && secondNumber === '0'){
         if(firstNumber.length > 1){
             firstNumber = firstNumber.slice(0, -1);
-            updateDisplay(firstNumber)
         } else {
             firstNumber = '0'
-            updateDisplay(firstNumber)
         }
-    } else if(secondNumber !== '0'){
+        updateDisplay(firstNumber)
+    } 
+    
+    else if(secondNumber !== '0'){
         if(secondNumber.length > 1){
-            secondNumber = secondNumber.slice(0, -1);
-            updateDisplay(secondNumber)
+            secondNumber = secondNumber.slice(0, -1);  
         } else {
             secondNumber = '0'
-            updateDisplay(secondNumber)
         }
+        updateDisplay(secondNumber)
     }
+    
+}
+
+function togglePlusMinus(){
+    if(firstNumber !== '0' && secondNumber === '0'){
+        if(firstNumber.includes('-')){
+            firstNumber = firstNumber.slice(1)
+        } else {
+            firstNumber = `-${firstNumber}`
+        }
+        updateDisplay(firstNumber)
+    } 
+    
+    else if(secondNumber !== '0'){
+        if(secondNumber.includes('-')){
+            secondNumber = secondNumber.slice(1)
+        } else {
+            secondNumber = `-${secondNumber}`
+        }
+        updateDisplay(secondNumber)
+    }
+
 }
 
 function updateDisplay(input){
