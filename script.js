@@ -14,6 +14,11 @@ buttonWrapper.addEventListener('click', (e) => {
         return
     }
 
+    if(buttonClicked.classList.contains('undo')){
+        undo()
+        return
+    }
+
     if(buttonClicked.classList.contains('number')
         || buttonClicked.classList.contains('operator') 
     ){
@@ -62,6 +67,26 @@ function clearAll(){
     display.textContent = firstNumber
 }
 
+function undo(){
+    if(firstNumber !== '0' && secondNumber === '0'){
+        if(firstNumber.length > 1){
+            firstNumber = firstNumber.slice(0, -1);
+            updateDisplay(firstNumber)
+        } else {
+            firstNumber = '0'
+            updateDisplay(firstNumber)
+        }
+    } else if(secondNumber !== '0'){
+        if(secondNumber.length > 1){
+            secondNumber = secondNumber.slice(0, -1);
+            updateDisplay(secondNumber)
+        } else {
+            secondNumber = '0'
+            updateDisplay(secondNumber)
+        }
+    }
+}
+
 function updateDisplay(input){
     display.textContent = input
 }
@@ -106,8 +131,6 @@ function isOperator(input){
 function isNumber(input){
     return numbers.includes(input)
 }
-
-
 
 function operate(operator, num, num2){
     let a = parseFloat(num)
