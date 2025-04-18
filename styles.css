@@ -14,12 +14,24 @@ body {
 main{
     display: flex;
     height: 100vh;
-    width: 100vw;
+    width: 100%;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    background: linear-gradient(145deg, #000000, #1B103A, #4c3d81);
-    position: relative
+    background: linear-gradient(150deg, white, rgb(82, 6, 148), black);
+    position: relative;
+    overflow: hidden;
+}
+.grid-item {
+    background-color:#4c3d81;
+    transition: background-color 60s ease-out;
+    border: none;
+    border-radius: 5px;
+}
+
+.grid-item:hover{
+    background-color: transparent;
+    transition: background-color 0.01s ease-in;
 }
 
 .calculator {
@@ -33,6 +45,7 @@ main{
   transition: border-color 0.5s ease, transform 0.5s ease;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   position: absolute;
+  z-index: 1;
 }
 
 .calculator:hover {
